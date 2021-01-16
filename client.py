@@ -6,7 +6,7 @@ from threading import Thread
 def receive():
     while True:
         msg = client_socket.recv(BUFSIZ).decode("utf8")
-        if msg == "{quit}":
+        if msg == "--quit":
             client_socket.close()
             break
         if not msg:
